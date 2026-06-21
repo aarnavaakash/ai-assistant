@@ -11,13 +11,14 @@ import geminiResponse from "./gemini.js"
 const app=express()
 app.use(cors({
     origin: (origin, callback) => {
-        if (!origin || /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
+        // We add your exact frontend URL here, while keeping the localhost check for local testing
+        if (!origin || origin === 'https://ai-assistant-frontend-q4tp.onrender.com' || /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
             callback(null, true);
         } else {
             callback(new Error('Not allowed by CORS'));
         }
     },
-    credentials:true
+    credentials: true
 }))
 const port=process.env.PORT || 5000
 
