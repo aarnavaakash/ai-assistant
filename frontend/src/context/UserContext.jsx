@@ -1,8 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react'
 import axios from 'axios'
 const getBackendUrl = () => {
-    const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-    return `http://${hostname}:8000`;
+  // Replace the dynamic local URL with your Render URL
+  return 'https://ai-assistant-backend-wsm9.onrender.com';
 }
 
 export const userDataContext=createContext({
